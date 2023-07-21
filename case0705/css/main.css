@@ -1,0 +1,174 @@
+/* @font-face {
+	font-family: 'AbelRegular';
+        src: url('fonts/abel-regular-webfont.eot');
+        src: url('fonts/abel-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('fonts/abel-regular-webfont.woff') format('woff'),  url('fonts/abel-regular-webfont.ttf') format('truetype'),  url('fonts/abel-regular-webfont.svg#AbelRegular') format('svg');
+     } */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap');
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body{
+    /* font-family: "AbelRegular" , sans-serif; */
+    font-family: 'Noto Sans TC','Microsoft JhengHei', sans-serif;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.main{
+    /* width: 780px; */
+    width: 100%;
+    margin: 0 auto;
+    max-width: 780px;
+}
+header{
+    text-align: center;
+}
+header img{
+    width: 150px;
+    margin-top: 20px;
+}
+
+.main>nav{
+    border-top: 1px solid #8a8000;
+    border-bottom: 1px solid #8a8000;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.main>nav>ul{
+    display: flex;
+}
+.main>nav>ul>li{
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    /* display:inline-block;
+    width: 33.33333%; */
+    /* margin-right: -4px */
+
+    /* 給flex用的 */
+    flex: 1;
+}
+.main>nav>ul>li>.nav_item{
+    text-decoration: none;
+    font-size: 22px;
+    display: block;
+    /* font-weight: bold */
+}
+.main>nav>ul>li>.nav_item:hover{
+    background-color: #dcdddd;
+}
+/* .main>nav>ul>li>a.nav_item:hover .nav_ch{
+color: red
+} */
+.nav_ch{
+color: black;
+}
+.nav_eng{
+color: #8a8000;
+}
+.main>.content img{
+width: 100%;
+margin-bottom: 20px;
+border-radius: 5px;
+}
+
+/* shop用的 */
+.shop_content .item_mid h1{
+    font-size: 20px;
+    margin: 0;
+  }
+  .shop_content .item_left img{
+    width: 100%
+  }
+  .shop_content .item_title{
+    border-bottom: 1px solid #8a8000;
+    padding-bottom: 5px;
+  }
+  .shop_content .item_button{
+    border-radius: 20px;
+    background-color: #8a8000;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .shop_content .item_button:hover{
+    background-color: black;
+  }
+  .shop_content .item_right_content{
+    display: flex;
+  }
+  .shop_content .item_child{
+    display: flex;
+  }
+  .shop_content .item_child_left{
+    flex: 1;
+  }
+  .shop_content .item_child_left h2{
+    font-size: 16px;
+    color: #8a8000;
+  }
+  .shop_content .item_child_left p{
+    font-size: 12px;
+  }
+  
+
+
+/* footer用的 */
+footer>.footer_content{
+    display: flex;
+}
+footer>.footer_content>ul{
+    display: flex;
+}
+footer>.footer_content>.bottom{
+    flex: 1;
+}
+footer>.footer_content>ul>li{
+    flex: 1;
+}
+
+.box{
+    color: white;
+    font-weight: 700;
+    background-color: #8a8000;
+    width: 100vw;
+    height: 135px;
+    overflow-x: hidden;
+}
+
+.footer_content{
+    line-height: 60px;
+    max-width: 780px;
+    text-align: center;
+    margin: auto;
+}
+
+@media(max-width:992px){
+    .main>nav>ul{
+        flex-direction: column;}
+    .main>nav>ul>li{
+        width: 100%;
+    }
+}
+
+
+

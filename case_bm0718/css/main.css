@@ -1,0 +1,224 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/* header區塊 */
+header{
+    display: flex;
+    height: 75px;
+    align-items: center;
+}
+.logo{
+    width: 100px;
+}
+/* hover動畫 */
+header .header_left a:hover .logo_text{
+    -webkit-animation: hover-shine 1.5s cubic-bezier(0, 0.58, 1, 0.44) infinite;
+    animation: hover-shine 1.5s cubic-bezier(0, 0.58, 1, 0.44) infinite;
+}
+@keyframes hover-shine {
+  0%{
+    background: #52b14c;
+    color: white;
+  }
+  25%{
+    background: #ffdd3d;
+    color: white;
+  }
+  50%{
+    background: #f8b158;
+    color: white;
+  }
+  75%{
+    background: #f15b3a;
+    color: white;
+  }
+  100%{
+    background: #28b2ee;
+    color: white;
+  }
+}
+
+header .header_left a{
+    display: flex;
+    margin: 0 55px;
+}
+.logo_text{
+    border: 1px solid #727272;
+    color: #727272;
+    height: 30px;
+    line-height: 30px;
+    padding: 1px 8px;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+header .header_mid ul{
+    display: flex;
+}
+.header_mid>ul>li a{    
+    color: black;
+    font-weight: bold;
+}
+.header_right{
+    margin-left: auto;
+}
+.header_right a{
+    color: black;
+    border: 2px solid #f7b157;
+    border-radius: 50px;
+    padding: 15px;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.header_right a :hover{
+    background-color: linear-gradient(135deg, #f6d);
+    color: white;
+}
+
+/* 漢堡選單 */
+#header_check{
+    display: none;
+}
+#header_check+label{
+    display: none;
+    position: absolute;
+    right: 10px;
+}
+
+/* main區塊 */
+.sec_banner{
+    background-color: #1b96e1;
+    text-align: center;
+    padding: 20px 0;
+}
+.sec_banner img{
+    width: 100%;
+}
+
+/* 表單區塊 */
+
+/* 寫法一 */
+/* .bm_form input.form-control{
+    border: 1px solid black;
+    background-color: rgb(227, 227, 227);
+    padding: 10px;
+    outline: none;
+    
+}
+.bm_form input.form-control:focus{
+    border: #1b96e1;
+    box-shadow: 0 0 0 1.5px #1b96e1;
+} */
+/* 寫法二 */
+.input_group{
+    background-color: rgb(227, 227, 227); 
+    margin-bottom: 15px;
+    position: relative;
+}
+.input_group::before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    /* background-color: red; */
+    background: url(https://cdn-icons-png.flaticon.com/512/483/483408.png);
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 7px;
+}
+.input_group .form-control{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #000;
+    padding: 10px;
+    padding-left: 35px;
+}
+.bm_form input.form-control:focus{
+    border: #1b96e1;
+    box-shadow: 0 0 0 1.5px #1b96e1;
+} 
+
+.con-chose input{
+    display: none;
+}
+.con-chose label::before{
+    content: "";
+    border: 2px solid gray;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+/* 共用結構 */
+.container{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 780px;
+}
+.bm_btn{
+    border: 4px solid white;
+    background-color: #ffdd3d;
+    border-radius: 100px;
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 3.5rem;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing:0.4rem;
+    display: inline-block;
+    position: relative;
+}
+.bm_btn.arrow::before{
+    content: "→";
+    position: absolute;
+    right: 10px;
+}
+a{
+    text-decoration: none;
+}
+::selection {
+    color: black;
+    background-color: yellow;
+}/* 選取文字背景顏色 */
+
+@media(max-width:768px){
+#header_check+label{display: block;
+cursor: pointer;}
+.header_right{display: none;}
+header .header_mid ul{position: absolute;
+left: 0;
+top: 75px;
+background-color: white;
+width: 100%;
+flex-direction: column;
+text-align: center;
+display: none;
+}
+.header_mid>ul>li{
+    margin: 20px;}
+
+#header_check:checked+label+ul{
+display: flex;
+}
+}
