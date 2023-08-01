@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body id="app">
+    <ul>
+        <li>{{message}}</li>
+        <li>{{list}}</li>
+        <li>{{form}}</li>
+        <li class="text-amber-200 font-bold" v-for="(i, idx) in list" :key="idx">{{i}}</li>
+    </ul>
+    <div>
+        <input type="text">
+    </div>
+    
+    <div v-show="show">hey</div>
+    <button @click="clickfunc">click</button>
+    
+</body>
+<script>
+    const { createApp, ref, reactive } = Vue
+
+ 
+    createApp({
+      setup() {
+        const message = ref('Hello vue!');
+        const list = reactive(['enya','jeonghan','joshua']);
+        const form = reactive({name:'enya', age:'23', height:'160'});
+        const show = ref(false)
+        
+        function clickfunc(){
+            show.value= !show.value;}
+       
+        return {
+          message, list, form, show, clickfunc
+        }
+      }
+    }).mount('#app')
+</script>
+</html>

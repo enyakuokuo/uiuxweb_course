@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript" src="https://unpkg.com/real-turtle"></script>
+<canvas id="real-turtle"></canvas>
+<script type="text/javascript" src="https://unpkg.com/real-turtle/build/helpers/simple.js"></script>
+
+<script>
+
+turtle.setSpeed(0.9);//設定速度
+
+// let i=0;
+// while (i<600){
+//     turtle.forward(i);
+//     turtle.left(91);
+//     i = i + 1
+// }
+
+// var a1 = 50;
+
+// // console.log(a1);//把公式顯示
+// // alert('to show off the screen')//跳出視窗
+
+// turtle.fd(a1)
+// turtle.rt(90)
+// turtle.fd(a1)
+
+
+var length = 0;
+var angle = 90;
+
+// while(length<500){  //括號內=要執行的條件
+//     turtle.fd(length);
+//     turtle.left(angle);
+//     length = length + 5
+// }
+
+// for(var i=0 ;i<500 ;i=i+1){
+// turtle.fd(length);
+// turtle.left(angle);
+// length = length + 5
+// }
+
+for(var i=0; i<100; i=i+1){
+    turtle
+    .arc(15+i*10,360,true)
+    .right(90)
+    .penUp()
+    .fd(10)
+    .lt(90)
+    .penDown()
+}
+</script>
+   
+</body>
+</html>

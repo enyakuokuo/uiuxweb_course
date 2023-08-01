@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- swiper的cdn -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!-- tailwind的cdn -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- animate的cdn -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <!-- wow的cdn -->
+  <link rel="stylesheet" href="css/animate.css">
+  <script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+  </script>
+  <!-- vue cdn -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body id="app">
+    <nav class="fixed w-full h-16 flex justify-between items-center px-8 text-white">
+      <h1>Enya Kuo</h1>
+      <ul class="hidden lg:flex gap-6">
+        <li>About me</li>
+        <li>Contact</li>
+        <li>News</li>
+        <li>Products</li>
+      </ul>
+      <label class="relative w-12 h-12 flex flex-col justify-center items-center gap-1 lg:hidden cursor-pointer overflow-hidden" for="mobile-menu">
+        <input class="peer hidden" type="checkbox" id="mobile-menu">
+        <div class="w-7 h-1 bg-zinc-200 rounded-full peer-checked:rotate-45 translate-y-2 duration-200"></div>
+        <div class="w-7 h-1 bg-zinc-200 rounded-full peer-checked:translate-x-10 duration-200"></div>
+        <div class="w-7 h-1 bg-zinc-200 rounded-full peer-checked:-rotate-45 peer-checked:-translate-y-2 duration-200"></div>
+        <div></div>
+      </label>
+    </nav>
+    <div class="w-full h-screen bg-[url(img/banner.jpg)] bg-cover bg-center flex justify-center items-center">
+      <h1 class="text-white text-6xl font-bold animate__animated animate__zoomIn">Welcome to my website</h1>
+    </div>
+    <div class="grid grid-cols-4 grid-rows-2 gap-4 p-4">
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+      <div class="col-span-1 bg-slate-300"><img src="img/cat.jpg" alt=""></div>
+    </div>
+    <div class="py-5 mx-20" v-for="i in list" :key="i.id">
+      <div class="bg-purple-200 h-10 flex justify-between p-2" >
+        {{i.title}}
+        <button class="w-16 h-6 bg-white rounded-md" @click="click">Click</button>
+      </div>
+    
+      <div class="border-solid flex p-2 overflow-hidden" v-show="click">{{i.content}}</div>
+    </div>
+</body>
+<script>
+  const { createApp, ref, reactive} = Vue
+
+  createApp({
+    setup() {
+      const list=reactive(
+        [{id:1, title:'title1', content:'content1', show:'false'}, 
+        {id:2, title:'title2', content:'content1', show:'false'},
+        {id:3, title:'title3', content:'content1', show:'false'},
+        {id:4, title:'title4', content:'content1', show:'false'},
+        {id:5, title:'title5', content:'content1', show:'false'},
+        {id:6, title:'title6', content:'content1', show:'false'},
+        ]);
+      
+        function click(i){
+          i.show=!i.show
+        }
+      
+      return {
+        list, click
+      }
+    }
+  }).mount('#app')
+</script>
+</html>

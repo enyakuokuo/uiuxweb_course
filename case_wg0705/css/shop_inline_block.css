@@ -14,7 +14,7 @@
 .item_mid{
     display: inline-block;
     width: 40%;
-    width: calc(100% - 150px - 250px);
+    width: calc(100% - 150px - 250px);    /* 中間塊彈性版面 */
     margin-right: -4px;
     vertical-align: top;
 }

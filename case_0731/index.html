@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="css/animate.css">
+  <script src="js/wow.min.js"></script>
+<style>
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+  </style>    
+
+
+</head>
+<body id="app">
+    <nav class="bg-gray-400 flex justify-between p-2">
+        <h1 class="text-white">hi everyone</h1>
+        <div class="flex gap-2 hover:cursor-pointer">
+            <div class="text-white relative group">About
+                <ul class="z-10 absolute px-3 group-hover:block hidden bg-black">
+                    <li>123</li>
+                    <li>456</li>
+                </ul>
+            </div>
+            <div @click="click()" class="text-white">Product</div>
+        </div>
+    </nav>
+    <div v-show="show" class="w-full h-full p-2 gap-2 grid grid-cols-3 lg:grid-cols-5">
+        <div v-for="i in name":key="i">
+            <h1 class="flex justify-center font-bold">{{i}}</h1>
+            <div class="bg-slate-300 w-full h-60 animate__animated animate__pulse"></div>
+        </div>
+        
+    </div>
+    <h1 class="flex justify-center m-2 font-bold text-lg">最新消息</h1>
+    <div class="flex relative">
+        <img class="w-full m-2 lg:w-2/3 h-auto" src="https://static.toiimg.com/photo/msid-53891743,width-96,height-65.cms" alt="">
+        <ul class="absolute m-2 opacity-80 space-y-5 lg:left-1/2 top-1/4">
+            <li class="wow fadeInRight h-10 w-96 bg-slate-300 flex items-center p-2 ">News</li>
+            <li class="h-10 w-96 bg-slate-300 flex items-center p-2 ">News</li>
+            <li class="h-10 w-96 bg-slate-300 flex items-center p-2 ">News</li>
+            <li class="h-10 w-96 bg-slate-300 flex items-center p-2 ">News</li>
+            <li class="h-10 w-96 bg-slate-300 flex items-center p-2 ">News</li>
+            <li class="h-10 w-96 bg-slate-300 flex items-center p-2 ">News</li>
+        </ul>
+    </div>
+    <div class="swiper mySwiper h-80">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="flex justify-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vLZdUn5lGks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+          },
+        });
+      </script>
+    
+      <script>
+      new WOW().init();
+      </script>
+</body>
+
+
+<script>
+  const { createApp, ref, reactive } = Vue
+
+  createApp({
+    setup() {
+      const show = ref(true);
+      const name =reactive(['123','345','567','789','910','012'])
+      
+      function click(){
+        show.value=!show.value;
+      }
+      
+      return {
+        show, click, name
+      }
+    }
+  }).mount('#app')
+</script>
+</html>
